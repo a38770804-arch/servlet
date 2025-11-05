@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>책 목록</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
@@ -55,7 +55,37 @@
             }
         };
         list.add(map);
+
+
     %>
+
+    <div class="container">
+        <form method="get" action="/jsp/test/book/detail.jsp">
+            <h2 class="text-center">책 목록</h2> <br>
+            <table class="table text-center">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>표지</th>
+                    <th>제목</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(Map<String, Object> book : list) {%>
+                <tr>
+                    <td><%= book.get("id") %></td>
+                    <td>
+                        <img width="150" alt="책 표지" src="<%= book.get("image") %>">
+                    </td>
+                    <td class="display-4">
+                        <a href="/jsp/test/book/detail.jsp?id=<%= book.get("id") %>"><%= book.get("title") %></a>
+                    </td>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </form>
+    </div>
 
 
 

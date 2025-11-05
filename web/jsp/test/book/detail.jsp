@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>책 상세</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
@@ -55,7 +55,25 @@
             }
         };
         list.add(map);
+
+        int id = Integer.parseInt(request.getParameter("id"));
     %>
+
+    <div class="container">
+        <% for(Map<String, Object> book:list) {
+            if(id == (Integer)book.get("id")) { %>
+        <div class="d-flex">
+            <div>
+                <img alt="책 표지" src="<%= book.get("image") %>">
+            </div>
+            <div class="ml-4">
+                <div class="display-1 font-weight-bold"><%= book.get("title") %></div>
+                <div class="display-2 text-info"><%= book.get("author") %></div>
+                <div class="display-4 mt-3"><%= book.get("publisher") %></div>
+            </div>
+        </div>
+        <% }} %>
+    </div>
 
 </body>
 </html>
