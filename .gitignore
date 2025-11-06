@@ -28,3 +28,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+Servlet.iml
+.idea/libraries/jsp_api.xml
+.idea/libraries/servlet_api.xml
