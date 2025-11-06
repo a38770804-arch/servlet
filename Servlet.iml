@@ -20,6 +20,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="servlet-api" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="jsp-api" level="project" />
+=======
+    <orderEntry type="library" name="mysql-connector-j-9.5.0" level="project" />
+>>>>>>> 9e10575575996c3210c9f78d04fde04bad55091d
   </component>
 </module>
